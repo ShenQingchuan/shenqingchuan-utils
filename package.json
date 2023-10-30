@@ -1,0 +1,68 @@
+{
+  "name": "@shenqingchuan/utils",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.33.6",
+  "description": "My awesome JavaScript/TypeScript toolkit",
+  "license": "MIT",
+  "homepage": "https://github.com/ShenQingchuan/shenqingchuan-utils",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShenQingchuan/shenqingchuan-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ShenQingchuan/shenqingchuan-utils/issues"
+  },
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=16.0"
+  },
+  "scripts": {
+    "dev:docs": "typedoc --watch --preserveWatchOutput",
+    "build:docs": "typedoc",
+    "serve:docs": "serv docs",
+    "lint": "eslint .",
+    "lint:fix": "pnpm run lint --fix",
+    "build": "tsup",
+    "test": "vitest",
+    "release": "bumpp && pnpm publish",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@antfu/eslint-config": "1.0.0-beta.29",
+    "@types/node": "*",
+    "@vitest/coverage-c8": "^0.26.3",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.52.0",
+    "lint-staged": "^13.3.0",
+    "prettier": "^2.8.8",
+    "serv": "^0.2.4",
+    "simple-git-hooks": "^2.9.0",
+    "tsup": "^6.7.0",
+    "tsx": "^3.14.0",
+    "typedoc": "^0.23.28",
+    "typescript": "^4.9.5",
+    "vitest": "^0.25.8"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx,json}": [
+      "eslint --fix"
+    ]
+  }
+}
