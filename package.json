@@ -1,7 +1,7 @@
 {
   "name": "@shenqingchuan/utils",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "packageManager": "pnpm@7.33.6",
   "description": "My awesome JavaScript/TypeScript toolkit",
   "license": "MIT",
